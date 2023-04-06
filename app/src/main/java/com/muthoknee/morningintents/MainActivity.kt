@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var mMpesa: Button
     lateinit var mCall: Button
     lateinit var mWebsite: Button
+    lateinit var mMap: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         mMpesa=findViewById(R.id.mBtnMpesa)
         mCall=findViewById(R.id.mBtnCall)
         mWebsite=findViewById(R.id.mBtnWebsite)
+        mMap=findViewById(R.id.MBtnMap)
         // set on click
         mSms.setOnClickListener{
             val uri: Uri = Uri.parse("smsto:0712345678")
@@ -78,6 +80,10 @@ class MainActivity : AppCompatActivity() {
         mWebsite.setOnClickListener{
         val tembea = Intent(this@MainActivity, WebsiteActivity::class.java)
             startActivity(tembea)
+        }
+        mMap.setOnClickListener {
+            val ramani = Intent(this, MapsActivity::class.java)
+            startActivity(ramani)
         }
     }
 }
